@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_float.html</title>
+    <style>
+        article .pic{
+            width: 100px;
+            height: 100px;
+            background: darkblue;
+            margin: 10px;
+            float: left;
+        }
+
+        .p2{
+            clear: left;
+        }
+
+        /* 가로 정렬 float */
+        .box{
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin: 10px;
+            float: left;
+        }
+
+        /* float 해제 -> 형제요소 clear */
+        .box4{
+            width: 200px;
+            height: 120px;
+            background: tomato;
+            clear: left;
+        }
+
+        /* float 해제 -> 부모요소 overflow */
+        .parent{
+            overflow: hidden;
+        }
+
+        /* float 해제 -> 부모요소 clearfix 클래스 추가 */
+        .clearfix::after{
+            content: "---";
+            clear: both;
+            display: block;
+        }
+
+        span{
+            width: 100px;
+            height: 100px;
+            background: violet;
+            margin: 10px;
+            float: left;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <article>
+        <div class="pic"></div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium maiores cupiditate, numquam delectus impedit nulla cum enim rem possimus et, facilis architecto id placeat deleniti ipsam porro. Accusamus, magnam dolorem.
+        <div class="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At assumenda maxime culpa? Pariatur quo consequuntur, dolor saepe possimus inventore cumque repudiandae eligendi aliquam velit praesentium itaque accusantium. Aliquam, similique placeat.</div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, ea quidem quo odio necessitatibus rem sunt facere ad vero est quaerat maxime iusto alias consectetur atque hic quisquam placeat quas?
+    </article>
+    
+    <hr>
+
+    <!-- <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box4"></div> -->
+
+    <hr>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <div class="clearfix">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <div class="box4"></div>
+
+    <hr>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+</body>
+</html>
