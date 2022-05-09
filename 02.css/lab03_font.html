@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_font.html</title>
+    <style>
+        /* font-style (스타일)*/
+        /* font-weight (굵기)*/
+        p{
+            font-style:italic;
+            font-weight: 900;
+        }
+
+        div{
+            font-size: large;
+        }
+
+        body *{
+            border: 2px solid;
+        }
+
+        .container{
+            /* width: 200px; */
+            font-size: 10px;
+            /* em은 자기 자신의 폰트 크기를 기준으로 잡음 */
+            /* 1em = 10px */
+            width: 20em; 
+        }
+
+        .parent{
+            /* width: 100px; */
+            /* width: 50%; */
+            /* %는 부모요소의 단위에 영향을 받는다 */
+            width: 10em;
+            font-size: 10px;
+        }
+
+        .child{
+            /* width: 50px; */
+            /* 최상위 root의 폰트크기를 기준으로 잡음 */
+            /* root -> 16px ->1rem, 5rem=16px*5=80px */
+            width: 5rem;
+        }
+        
+        html{
+            font-size: 10px;
+            font: bold 10px;
+        }
+
+        /* vh, vw */
+        .container2{
+            /* 뷰(화면)을 기준으로 잡음 */
+            /* view port height, view port width */
+            width: 50vw;
+            height: 50vh;
+        }
+
+        /* line-hieght */
+        .line{
+            line-height: 2;
+            /* 픽셀 고정 선택은 권장하지 않음 */
+        }
+
+        .color{
+            color: red;
+            color:rgb(255, 0, 0);
+            /* rgb(red(255),blue(255),green(255)) */
+            color:#FF0000;
+        }
+
+        .family{
+            font-family: cursive;
+        }
+
+        /* text-align */
+        .align{
+            text-align:justify;
+        }
+        
+        /* text-decoration */
+        .deco{
+            text-decoration: line-through;
+        }
+
+        /* text-indent */
+        .indent{
+            text-indent: 10px;
+        }
+
+        .css{
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+    <!-- font-style -->
+    <p>폰트 스타일 입니다</p>
+
+    <!-- font-weight -->
+    <p>폰트 웨이트 입니다</p>
+    
+    <!-- font-size -->
+    <!-- 단위 : px, cm, %, em -->
+    <!-- 기준 : 16px -->
+    <!-- small, medium(16px) -->
+    <div>폰트 사이즈 입니다</div>
+
+    <!-- 단위 디테일 -->
+    <div class="container">컨테이너
+        <div class="parent">부모
+            <div class="child">자식1</div>
+            <div class="child">자식2</div>
+        </div>
+    </div>   
+
+    <!-- vw, vh -->
+    <div class="container2"></div>
+
+    <!-- line-hieght -->
+    <div class="line">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, expedita vitae? Neque consequuntur eius facere aut, perspiciatis cupiditate pariatur, porro expedita alias officiis corporis veniam assumenda? Nesciunt molestiae earum maiores.</div>
+
+    <!-- color -->
+    <div class="color">폰트 컬러 입니다</div>
+
+    <!-- font-family -->
+    <!-- :[글꼴 후보1, 2, ...], 글꼴 계열 -->
+    <!-- serif : 바탕체
+    sans-serif : 고딕체
+    monospace : 가로 폭 동등한 고정 넓이
+    cursive : 필기체
+    fantasy : 재미있는 글꼴 계열 -->
+    <div class="family">Hello, CSS</div>
+    
+    
+    <!-- text-align -->
+    <div class="align">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut accusantium maxime blanditiis reiciendis quibusdam consequatur, doloribus pariatur laudantium explicabo magnam culpa, nostrum, vero incidunt neque? Id magni iure enim voluptate!
+    Tenetur atque quod et, sit rem perspiciatis doloremque libero ipsam. Quis aut eligendi facere quibusdam modi incidunt veniam vero, fuga labore, debitis laudantium? Impedit asperiores aspernatur ex necessitatibus rerum et.
+    Incidunt debitis facilis asperiores exercitationem explicabo, aliquid voluptatem animi minima! Perferendis amet assumenda iure harum libero quibusdam corporis provident, vel magni praesentium earum atque eaque tempore! Harum ea quo delectus.</div>
+
+    <!-- text-decoration -->
+    <div class="deco">
+        Hello, CSS
+    </div>
+
+    <!-- text-indent -->
+    <div class="indent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui ipsa nesciunt possimus obcaecati placeat. Cum, adipisci officiis autem a unde ad molestias, maxime esse, aliquam tempore ipsum quisquam et sed.</div>
+    <div class="css">CSS3</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png" alt="css3">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+</html>
