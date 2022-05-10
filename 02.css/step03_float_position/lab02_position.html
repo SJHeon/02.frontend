@@ -75,10 +75,43 @@
             right: 50px;
         }
 
+        /* sticky */
+        .container{
 
+        }
+
+        .section{
+            height: 300px;
+            border: 3px solid black;
+        }
+
+        .section h1{
+            text-align: center;
+            top: 0;
+            position: sticky;
+        }
         
+        /* z-index */
+        .box{
+                width: 100px;
+                height: 100px;
+                background: red;
+                float: left;
+                margin-right: -20px;
+        }
 
+        .box:nth-child(2n){
+            margin-top: 20px;
+        }
 
+        .box2{
+            position: relative;
+        }
+
+        .box3{
+            position: relative;
+            z-index: 2;
+        }
         
     </style>
 </head>
@@ -96,13 +129,43 @@
 
     <!-- absolute -->
     <!-- fixed -->
-    <div class="grand">
+    <!-- <div class="grand">
         <div class="parent">
             <div class="box">1</div>
             <div class="box absolute">2</div>
             <div class="box fixed">3</div>
         </div>
+    </div> -->
+
+    <!-- sticky -->
+
+    <div class="container">
+        <div class="section">
+            <h1>Title1</h1>
+        </div>
+        <div class="section">
+            <h1>Title2</h1>
+        </div>
+        <div class="section">
+            <h1>Title3</h1>
+        </div>
+        <div class="section">
+            <h1>Title4</h1>
+        </div>
+        <div class="section">
+            <h1>Title5</h1>
+        </div>
+        <div class="section">
+            <h1>Title6</h1>
+        </div>
     </div>
+
+ 
+    <!-- <div class="box">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div> -->
 
 
 </body>
