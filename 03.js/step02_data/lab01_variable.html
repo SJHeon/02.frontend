@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_variable.html</title>
+</head>
+<body>
+    <script>
+        // 순서
+        var x; // 변수의 선언
+        
+        console.log(x);
+        //console.log(y); // <- ERROR : 선언이 안되어 있다
+        // Uncaught ReferenceError: Cannot access 'y' before initialization
+
+        x = 10; // 할당 : 변수에 값을 넣어 주는 것
+
+
+        // var=================================================
+        var x2 = 10; // 초기화 : 선언 + 할당
+        
+        console.log(x);
+        console.log(x2);
+
+        x = 30 // 재 할등
+        console.log(x);
+
+        var x = 40;
+        var x = '사십'; // 재 초기화
+        // var 는 다 들어가는데 재초기화 하면 코드 충돌이 날 위험이 있다!(설계한 값과 다른것이 들어갈 경우)
+        console.log(x); 
+
+
+        // let=================================================
+        let y = 5;
+        y = 15; // 재할당 은 가능
+
+        // let y = 25; // !ERROR : 35번째 줄 에서 이미 초기화 되어서 재초기화 불가능.
+        // Uncaught SyntaxError: Identifier 'y' has already been declared
+
+        // 변수의 범위(추가 설명 예정)
+        {
+            let y = 35; // 이건 된다!
+        }
+
+
+        // const : Constant 상수 =================================================
+        const c = 10;
+        console.log(c);
+
+        // c = 20; // !ERROR : const 에 들어간 값은 변하면 안된다!
+        // Uncaught TypeError: Assignment to constant variable.
+    </script>
+</body>
+</html>

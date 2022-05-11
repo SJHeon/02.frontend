@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_scope.html</title>
+</head>
+<body>
+    <script>
+        // 변수의 유효 범위 {}(코드블록)
+        // let, const : 블록 스코프
+        console.log("---블록 스코프---");
+            // 내부와 외부
+            let scope1 = 10;
+            {
+                let scope1 = 20;
+                console.log(scope1);
+            }
+            console.log(scope1);
+
+            // 외부 값을 내부에 가져올 때
+            let scope2 = 30;
+            {
+                console.log(scope2); // 외부에서 내부는 가능하다!
+            }
+
+            // 내부 값을 외부에 가져올 때
+            {
+                // let scope3 = 40
+            }
+            //console.log(scope3); // !ERROR Uncaught ReferenceError: scope3 is not defined
+                                // 즉 내부값을 외부에서 가져오는 건 불가능!
+
+        console.log('');
+
+        // var : 함수 스코프
+        console.log("---함수 스코프---");
+        {
+            var scopeVar = 50;
+        }
+        console.log(scopeVar); // 내부 값을 외부로 가져오는게 가능!
+                                // 블록 스코프가 의미가 없음
+
+        var scopeVar2 = 60;
+        console.log(scopeVar2);
+        (function(){
+            scopeVar2++;
+            console.log(scopeVar2);
+        })();
+
+        (function(){
+            var scopeVar3 = 70;
+            console.log(scopeVar3);
+        })();
+
+        // console.log(scopeVar3); // !ERROR : ReferenceError: scopeVar3 is not defined
+
+        console.log('');
+
+        // hoisting : 끌어 올리다
+        console.log("---hoisting---")
+
+        //hoist : var
+
+        // var hoist; // 선언부만 끌어 올리지 할당부(값) 을 끌어올리지는 않음
+        console.log(hoist);
+        var hoist = 'hoist(var)';
+        // var는 정확한 결과 값을 출력하지 못할 수 있음
+        // (초기화 하기전에 변수 이용하면 hoisting 현상이 생기기 때문(선언부만))
+
+        // hoist : let
+        // console.log(hoistLet);
+        let hoistLet = 'hoist(let)';
+
+        // 함수의 선언식과 표현식의 차이점
+        // 함수의 선언식만 hoisting이 가능!
+
+            // 선언식
+            print1(); // 가능!
+            function print1(){
+                console.log('print1');
+            }
+
+            // 표현식
+            // print2(); // 불가능..
+            var print2 = function(){
+                console.log('print2');
+            }
+
+
+    </script>
+</body>
+</html>

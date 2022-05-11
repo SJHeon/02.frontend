@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab01_syntax.html</title>
+</head>
+<body>
+    <script>
+        // 함수 : 특정 기능을 수행하는 소스 코드를 묶어 놓은 코드 뭉치, 값을 전달하는 역할도 함(return)
+            // js 에서는 함수도 객체로 인식
+        // 함수 선언
+            // fuction 함수명([매개변수1, 매개변수2, ...]){
+            //     실행 로직;
+            //     [return ;]
+            // };        [] -> 없을 수도 있음
+
+        function print(num1, num2){
+            console.log('함수 선언', num1, num2);
+        };
+
+        // 함수 호출
+        print(3, 4);
+        print(3, 4, 5); // 3,4 만 나온다!
+
+        // add() 선언
+        function add(x, y){
+            return x + y;
+        };
+
+        // add() 호출
+        add(1, 2); // 만 하면 출력 안된다! ruturn은 값을 가지기만 함
+
+            // 1.
+            let result = add(1 ,2);
+            console.log(result);
+
+            // 2.
+            console.log(add(1, 2));
+        
+        // 함수를 만드는 방법 : 선언식, 표현식
+        // 선언식(declarations)
+
+        // 선언
+        function getName(){
+            console.log("getName");
+        };
+        
+        // 표현식(Expressions)
+
+        // 선언
+        let checkAge = function(){ // 익명 함수(이름 없는 fuction)
+            console.log("표현식");
+        };
+
+        //호출
+        checkAge();
+
+        //그래서 선언식이랑 표현식 차이가 뭔데?
+
+        // 함수 - 리턴
+        function minus(x){
+            return function(y){
+                return y - x;
+            };
+        };
+
+        let minus3 = minus(3);
+        console.log(minus3);
+        
+        console.log(minus3(10));
+
+
+        // 함수 - 인자로 함수를 호출
+        function hello(callBack){
+            console.log('hello');
+            callBack();
+        }
+
+        // hello(); // !ERROR Uncaught TypeError: callBack is not a function at hello
+        
+        hello(function(){
+            console.log('callBack')
+        });
+
+
+    </script>
+</body>
+</html>

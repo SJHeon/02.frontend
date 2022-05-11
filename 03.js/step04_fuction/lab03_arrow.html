@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_arrow.html</title>
+</head>
+<body>
+    <script>
+        // 화살표 함수 :
+            // 표기법 : =>
+            // 사용 : 변수에 익명함수를 지정할 때
+        console.log("---화살표 함수---")
+        // let arrow = function(){
+        //     console.log('화살표 함수');
+        // }
+        
+        arrow = () => {console.log('화살표 함수');}
+        
+        arrow();
+
+        // let add = function(x, y){
+        //     return x + y;
+        // }
+
+        let add = (x, y) => {return x + y;}
+
+        console.log(add(1, 2));
+
+        let printName = name => console.log(name);
+        // 매개변수 하나만 들어가면 () 생략가능, 코드 블럭{}도 마찬가지
+
+        printName('js');
+
+        console.log('');
+        // 즉시 실행 함수
+        console.log("---즉시 실행 함수---");
+
+        (function imdFunction1(){
+            console.log("즉시 실행 함수 1");
+        })();
+
+        (function imdFunction2(){
+            console.log("즉시 실행 함수 2");
+        })();
+
+        // ?매개변수가 있는 즉시 실행 함수 만들기
+        let name = "주경야독";
+        (function imdFunction3(test){ // 함수 정의에 대한 부분
+            console.log(test); // 함수 정의에 대한 부분
+        }(name)); // 호출에 대한 부분
+    </script>
+</body>
+</html>
