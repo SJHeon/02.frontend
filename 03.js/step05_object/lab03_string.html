@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03_string.html</title>
+</head>
+<body>
+    <script>
+        // 문자열 길이 length
+        let str1 = '부산광역시 해운대구 센텀동로 41 센텀벤처타운 205호';
+        console.log(str1.length);
+
+        // charAT(idx) : 해당 위치 인덱스의 문자 반환
+        console.log(str1.charAt(3));
+
+        // substring(idx1, idx2); : 마지막 인덱스는 미포함
+        // idx1 ~ idx2-1 까지 반환
+        console.log(str1.substring(5,9));
+
+        // replace(바꾸려는 글자, 바꿀 글자)
+        console.log(str1.replace('부산', 'Busan'));
+
+        // split('기준') : 기준에 따라 문자열을 분할하여 배열로 변환
+        console.log(str1.split());
+        console.log(str1.split(' '));
+
+        // concat() : 문자열을 결합
+        console.log(''.concat('집에','가고','싶은데'));
+    </script>
+</body>
+</html>

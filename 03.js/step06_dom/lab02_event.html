@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_event.html</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .invalid{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Menu</h1>
+        <div id="describe">설명</div>
+        <hr>
+        
+        <h3>서비스</h3>
+        <button id="check" class="tab" name="checkName">조회</button> <!-- script에서 만든 함수를 onclick으로 불러옴(onclick="clickFunc()")-->
+        <button id="transfer" class="tab">이체</button>
+        <ul class="checkService hide">
+            <li>계좌조회</li>
+            <li>어음수표조회</li>
+            <li>오픈뱅킹업무</li>
+        </ul>
+        
+        <p id="content"></p>
+        <p id="content2"></p>
+        <hr>
+
+        <h3>기입</h3>
+        이메일 : <input type="email" name="email" id="email">
+        <div id="invalidMsg"></div>
+        <div id="emailOutput"></div>
+    </div>
+    <script>
+        // event
+        const describeElement = document.getElementById('describe');
+        const checkElement = document.getElementById('check');
+        const contentElement = document.querySelector('#content');
+        const contentElement2 = document.querySelector('#content2');
+        const checkServiceElement = document.querySelector('.checkService');
+        const emailElement = document.getElementById('email');
+        const invalidMsg = document.getElementById('invalidMsg');
+        // 이벤트 적용 문법
+        // 1. 인라인 방식
+        // function clickFunc(){
+        //     describeElement.innerHTML = '계좌 조회 서비스'; // innerText도 가능
+        // }
+        // 요즘은 잘 안쓴다
+
+        // 2. 프로퍼티 방식 - 하나에 대한 함수만 지정가능 (여러개를 쓰기는 부적절하다)
+        // checkElement.onclick = function clickFunc(){
+        //     describeElement.innerHTML = '계좌 조회 서비스'; // innerText도 가능
+        // }
+        // checkElement.onclick = function clickFunc(){
+        //     contentElement.innerHTML = '계좌 조회 서비스2'; // innerText도 가능
+        // }
+
+        // 3. 이벤트 리스너 - 중복 이벤트에 대한 것도 커버 가능!
+        //어떤 이벤트가 있는지 주시하는 역할(x,y) x : 어떤 이벤트 인지, y : 이벤트 오면 할 동작
+        // checkElement.addEventListener('click', function clickFunc() {
+        // describeElement.innerHTML = '계좌 조회 서비스';
+        // });
+        
+        // checkElement.addEventListener('click', function clickFunc() {
+        // contentElement.innerHTML = '계좌 조회 서비스';
+        // });
+
+        // ver1
+        // checkElement.addEventListener('click', function clickFunc() {
+        //     describeElement.innerHTML = '계좌 조회 서비스';
+        //     contentElement.innerHTML = '계좌 조회 서비스2';
+        // }); 
+        
+        //ver2(ver1 을 화살표 함수로 바꾸기)
+        // checkElement.addEventListener('click', () => {
+        //     describeElement.innerHTML = '계좌 조회 서비스';
+        //     contentElement.innerHTML = '계좌 조회 서비스2';
+        // }); 
+
+        // 이벤트 종류
+        // MouseEvent : click, dbclick, mouseup, mousedown, ...
+        checkElement.addEventListener('mouseover',() => {
+           console.log(checkServiceElement.classList.contains('hide')); // '~' 가 있다면 true
+           checkServiceElement.classList.remove('hide');
+        });
+        
+        checkElement.addEventListener('mouseout',() => {
+        //    console.log(checkServiceElement.classList.contains('hide')); // '~' 가 있다면 true
+           checkServiceElement.classList.add('hide');
+        });
+        
+        // FocusEvent : focus, blur, focusin, focusout, ....
+        // 이메일 입력 -> @ 없을경우에 : 이메일 형식이 올바르지 않음
+        emailElement.addEventListener('focus', () => {
+            // emailElement.style.background = 'yellow';
+
+        });
+        emailElement.addEventListener('blur', () => {
+            // emailElement.style.background = 'blue';
+
+            if(emailElement.value.includes('@')){
+
+            }else {
+                invalidMsg.innerHTML = '이메일 형식이 올바르지 않음';
+                invalidMsg.classList.add('invalid');
+            }
+        });
+
+        
+        // keyboardEvent : keydown, keypress, keyup, ...
+        const emailOutput = document.getElementById('emailOutput');
+        emailElement.addEventListener('keydown', (event) => {
+            emailOutput.innerHTML += event.key;
+        });
+
+
+
+    </script>
+</body>
+</html>

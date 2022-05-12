@@ -41,7 +41,230 @@
                 console.log(arr1[i]);
             }
             
-            
-    </script>
+
+        let arr3 = [1, 2, 3, 4, 5];
+        // 요소 추가
+        // push () -> 뒤에 순차적으로 추가
+        // arr3.push(6, 7, 8);
+        // console.log(arr3);
+        
+        // unshift () -> 앞에 순차적으로 추가
+        // arr3.unshift(0, 01, 02);
+        // console.log(arr3);
+
+        // 요소 삭제
+        // pop()
+        // console.log(arr3);
+        // arr3.pop(); // 배열의 가장 뒤의 요소를 삭제!
+        // console.log(arr3.pop()); // 반환도 하는 아이다!
+        // console.log(arr3);
+
+        // shift()
+        // console.log(arr3);
+        // console.log(arr3.shift());
+        // console.log(arr3);
+        
+        // 요소 수정
+        // splice(idx)
+        // console.log(arr3);
+        // arr3.splice(2);
+        // console.log(arr3);
+
+        // splice(idx, n)
+        // console.log(arr3);
+        // arr3.splice(1,2);
+        // console.log(arr3);
+        
+        // splice(idx, n , x)
+        // console.log(arr3);
+        // arr3.splice(1,2,7);
+        // console.log(arr3);
+        
+        // slice
+        // console.log(arr3);
+        // arr3.slice(2,3);
+        // console.log(arr3);
+        // console.log(arr3.slice(2, 4));
+
+        // 요소 검색
+        // indexOf() : 해당 요소의 인덱스 값 반환
+
+        // console.log(arr3);
+        // console.log(arr3.indexOf(4));
+        // console.log(arr3.indexOf(0)); // <- 없는 요소 찾으면 -1 반환!
+        
+        // find() 테스트 함수의 조건에 맞는 첫번째 요소 값을 반환
+        // findIndex() 테스트 함수의 조건에 맞는 첫번째 요소의 인덱스 값을 반환
+        
+
+        // find
+        let even = arr3.find((value) => (value%2) == 0);
+        console.log(even);
+
+        // findIndex
+        let even1 = arr3.findIndex((value) => (value%2) == 0);
+        console.log(even1);
+
+        // -- ? 나이가 10살 미만인 고양이만 검색
+        let cats = [
+            {name :'마일로', age : 10},
+            {name :'앙꼬', age : 8},
+            {name :'포우', age : 12},
+            {name :'포니', age : 5}
+        ];
+
+        console.log(typeof cats);
+        let ycat = cats.find((cat) => cat.age < 10);
+        console.log(ycat);
+        
+        // for ~ of : 순차적으로 내부 요소에 접근 할 수 있는 이터러블(배열을 일반화)한 객체만 사용 가능
+        let cities = ["Busan", "Seoul", "Paris", "Jip"];
+        for (let city of cities){
+            console.log(city);
+        }
+
+        // 유사 배열 : 배열 처럼 인덱스와 같이 길이 프로퍼티가 존재(배열은 아님)
+        let likeArray = {
+            0 : "오늘 점심",
+            1 : '뭐먹지',
+            length : 2
+        }
+        console.log(likeArray);
+
+        // for(let element of likeArray){
+        //     console.log(element); // -> for ~ of 불가능! is not iterable
+        // }
+
+        // 해결 하려면 is iterable 하면된다!
+
+        // Array.from() : 유사 배열을 받아서 진짜 배열로 만들어 준다
+        let arr4 = Array.from(likeArray);
+        console.log(arr4);
+        
+        for(let element of arr4){
+            console.log(element); // -> for ~ of 불가능! is not iterable
+        }
+
+        // join ()
+        console.log(arr4.join());
+        console.log(arr4.join(' '));
+        console.log(arr4.join(' - '));
+
+        // foreach() : 배열만 사용 가능한 매소드
+        let avengers = ["스파이더맨", "호크", "헐크"]
+
+        // ver1
+        avengers.forEach((avengers) => {
+                           console.log(avengers);});
+
+
+        // ver2
+        avengers.forEach(printName);
+        function printName(avengers){
+            console.log(avengers);
+        };
+
+        // ver3
+        avengers.forEach(function printName(avengers){
+            console.log(avengers);
+        });
+
+
+        // map
+        let arr5 =[1, 2, 3, 4, 5];
+
+        // ? arr5 요소들을 제곱하여 expo 라고 하는 배열에 담아 줄것
+        let expo =[];
+
+        //for
+        
+        // for(let i = 0; i < arr5.length; i++) {
+        //         //내가 한거
+        //         // expo[i] = arr5[i]*arr5[i];
+        //         //강사님이 한거
+        //         expo.push(arr5[i]*arr5[i]);
+        //     }
+        console.log(expo);
+
+        // foreach
+        // 해보기
+
+        // map : 연산된 값 하나하나를 배열화 해줌
+        // 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
+        arr5.map((n) => expo.push(n*n));
+        let expo2 = arr5.map((n) => n*n);
+        console.log(expo);
+
+        
+        const info = [
+            {
+                id: 1,
+                name: "js"
+            },
+            {
+                id: 2,
+                name: "javascript"
+            }
+        ];
+
+        const names = info.map(info => info.name);
+        console.log(names);
+
+        // filter() : 만족하는 모든 요소를 "배열로" 출력해준다 
+        const todos = [
+            {
+                id: 1,
+                todo: '자격증 공부',
+                done: true
+            },
+            {
+                id: 2,
+                todo: '프로젝트',
+                done: false
+            },
+            {
+                id: 3,
+                todo: '운동',
+                done: false
+            }
+        ];
+
+        console.log(todos);
+        console.log(todos.find(todo => todo.id === 3));
+        console.log(todos.find(todo => todo.done === true));
+        console.log(todos.find(todo => todo.done === false)); // find는 만족하는 첫번째 값만 나온다
+        
+        console.log(todos.filter(todo => todo.done === false));
+
+        // reduce()
+        console.log(arr5);
+        
+        // arr5 총합
+        let sum = 0;
+        arr5.forEach(num => {
+            sum += num;
+        });
+
+        console.log(sum);
+
+        //reduce ( , n) => n이 우선적으로 acc에 들어간다 default = 0
+        sum = arr5.reduce((acc, cur) => acc + cur);
+
+        console.log(sum);
+
+        // acc 첫값 current  다음 값
+        // acc + current 의 값이 다시 acc로 들어감
+        // 그럼 (acc + current) => acc가 되고 다음 current 로 들어감
+        // 따지고 보면 (((acc + current) + current) + current + ...의 느낌
+
+        
+
+
+
+
+
+
+
+        </script>
 </body>
 </html>
