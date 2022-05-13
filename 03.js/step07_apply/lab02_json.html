@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab02_json.html</title>
+</head>
+<body>
+    <script>
+        // JSON : JavaScript Object Notatio, "문자열" 형태로 데이터를 주고 받는 포맷
+        //      : 내장 객체(자바스크립트가 운영되는 전역(global) 접근 가능)
+        //      : key:value 한 쌍으로 구성, "" 따옴표가 붙어있는 상태
+
+        // JSON.stringify : 객체를 JSON으로 변경 => 직렬화
+        // 객체, 배열, 문자형, 숫자형, boolean(t/f),null
+            //* 함수, 심볼, undefined : 적용 불가
+
+        //
+        let obj1 = {name: "js"};
+        console.log(obj1);
+        console.log(obj1.name);
+        console.log(typeof obj1);
+
+        let obj2 = "{'name': 'js'}";
+        console.log(obj2);
+        console.log(obj2.name); // undefined
+        console.log(typeof obj2);
+
+        // JSON.stringify
+        let obj3 = JSON.stringify(obj1);
+        console.log(obj3);
+        console.log(typeof obj3);
+        
+        let deepObj = {
+            info: {
+                private:{
+                    name: 'js',
+                    age: 17,
+                    hobbies: ['programming', 'studying']
+                }
+            },
+            purpose: undefined // 이 놈은 json 변경 안된다. 그래서 무시당한다
+        };
+
+        console.log(JSON.stringify(deepObj));
+
+        // JSON.parse : 문자열 -> 객체 => (역직렬화)
+        // let obj4 = JSON.parse(obj2); //Unexpected token ' => JSON 문자열은 "", 형태가 매우 중요하다!
+        let obj5 = {"name": "js"};
+        let obj6 = '{"name": "js"}';
+
+        console.log(typeof obj5); // object -> string이 아니다
+        console.log(obj6);
+
+        // let obj55 = JSON.parse(obj5); //!ERROR
+        let obj66 = JSON.parse(obj6); // parsing! 성공
+
+        console.log(obj66);
+        console.log(typeof obj66);
+
+        // test
+        let obj8 ={};
+        obj8.info = 'data';
+        console.log(obj8);
+
+        // 직렬화 잘 될까?
+
+        let testObj = {
+            main: {
+                pos : 'heal',
+                hero : 'lucio'
+            }, sub: {
+                pos : 'heal',
+                hero : 'ana',
+                loc :{
+                    Mloc : 'top',
+                    Sloc : undefined
+                }                
+            }
+        };
+        console.log(JSON.stringify(testObj));
+
+    </script>
+</body>
+</html>
