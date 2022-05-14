@@ -73,15 +73,31 @@
         // });
 
         // 1초 후 실행 함수
-        let promiseFunction = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve();
-            }, 1000);
+        // let promiseFunction = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         // resolve('success');
+        //         reject('fail');
+        //     }, 1000);
+        // });
+
+        // console.log(promiseFunction);
+
+        // promiseFunction.then((value) => {
+        //     console.log('프로미스 실행');
+        //     console.log(value);
+        // });
+
+        // 혼자 만들어본거
+        let p1 = new Promise(function (a, b) {
+            // resolve("성공!");
+            // 또는
+            b("오류!");
         });
 
-        console.log(promiseFunction);
-        promiseFunction.then(() => {
-            console.log("프로미스 실행");
+        p1.then(function (value) {
+            console.log(value); // 성공!
+        }, function (reason) {
+            console.log(reason); // 오류!
         });
     </script>
 </body>
