@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab06_myApi.html</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        "use-strict"
+        const urlPc ="http://openapi.seoul.go.kr:8088/6566636d7664657333306b51495343/json/LOCALDATA_031305/1/10/"
+        
+        axios.get(urlPc)
+            .then(res=> {
+                console.log(res);
+            });
+
+        axios.get(urlPc)
+            .then(res=> {
+                console.log(res);
+            });
+            // api 끌어오고 구조 보면서 뭐 가져오지 고민하다가 끝났습니다..
+            //죄송합니다.. :(
+
+
+    </script>
+</body>
+</html>
