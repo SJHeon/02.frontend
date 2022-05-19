@@ -14,7 +14,7 @@ import UseRef2 from './UseRef2';
 import UseRef3 from './UseRef3';
 import News from './News';
 import { UseContext1 } from "./UseContext1";
-
+//#region view
 // function App() {
 //   const title = "React"
 //   const basicStyle = {color: "green", fontSize : '40px'}
@@ -34,6 +34,9 @@ import { UseContext1 } from "./UseContext1";
 //     <UseState2/>
 //   );
 // }
+//#endregion
+
+
 function App() {
   // ver1
   // const [work, setWork] = useState(false);
@@ -44,12 +47,14 @@ function App() {
   //   setState(true);
   // }
 
-  const [company, setCompany] = useState("더존");
+  // const [company, setCompany] = useState("더존");
+  const [company, setCompany] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   // const [bgcolor, setBgcolor] = useState("white");
   // const [ftcolor, setFtcolor] = useState("black");
   return (
     <div className="App">
+
       {/* <View>
         <Hello name="react" color="red"></Hello>
         <Hello color="yellowgreen" important={true}></Hello>

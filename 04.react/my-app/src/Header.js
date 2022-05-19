@@ -28,13 +28,23 @@ const Header = () => {
         setDarkMode(!darkMode);
     }
     
-    const ktoE = () => {
-        setCompany("DouZone");
-    };
-    const EtoK = () => {
-        setCompany("더존");
+    // const ktoE = () => {
+    //     setCompany("DouZone");
+    // };
+    // const EtoK = () => {
+    //     setCompany("더존");
+    // };
+
+    const changeLanguage = () => {
+        setCompany(!company);
     };
 
+    const htmlValue = document.querySelector("html");
+    console.log(htmlValue);
+    console.log(typeof htmlValue);
+    const {color} = useContext(UseContext1);
+    htmlValue.style.backgroundColor = (color === "black"?"white":"black");
+    
 
 
     return (
@@ -59,9 +69,10 @@ const Header = () => {
             }}>
             {/* <button onClick={changeStatus}>DarkMode</button> */}
             <button onClick={changeMode}>DarkMode</button>
-            <h1> {company} New Devs</h1>
-            <button onClick={ktoE}>English</button>
-            <button onClick={EtoK}>Korean</button>
+            <h1> {company? "더존" : "Douzone"} New Devs</h1>
+            {/* <button onClick={ktoE}>English</button> */}
+            {/* <button onClick={EtoK}>Korean</button> */}
+            <button onClick={changeLanguage}>ChangeLanguage</button>
         </header>
     );
 }

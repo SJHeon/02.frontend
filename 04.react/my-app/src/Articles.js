@@ -8,7 +8,8 @@ const Articles = () => {
     // const { ftcolor, setFtcolor } = useContext(UseContext1);
     // const { company, bgcolor, ftcolor } = useContext(UseContext1);
     const { company, setCompany, darkMode, setDarkMode } = useContext(UseContext1);
-    console.log(company);
+    // console.log(company);
+    // console.log(darkMode);
 
  
     // return (
@@ -29,7 +30,7 @@ const Articles = () => {
                 color: darkMode? "black" : "white",
                 backgroundColor: darkMode? "white" : "black"
             }}>
-            <h3>{company}에 오신것을 환영합니다</h3>
+            <h3>{company ? "더존" : "Douzone"}에 오신것을 환영합니다</h3>
         </article>
     );
 }
