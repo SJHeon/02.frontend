@@ -15,17 +15,9 @@ import UseRef2 from './UseRef2';
 import UseRef3 from './UseRef3';
 import News from './News';
 import { UseContext1 } from "./UseContext1";
-<<<<<<< HEAD
-//#region view
-=======
-import UseMemo1 from './UseMemo1';
-import UseMemo2 from './UseMemo2';
-import UseCallback1 from './UseCallback1';
-import UseCallback2 from './UseCallback2';
 import UseReducer1 from './UseReducer1';
 import UseReducer2 from './UseReducer2';
-
->>>>>>> a21940862db149b11d3e917526debd8c79496ec4
+//#region view
 // function App() {
 //   const title = "React"
 //   const basicStyle = {color: "green", fontSize : '40px'}
@@ -46,11 +38,8 @@ import UseReducer2 from './UseReducer2';
 //   );
 // }
 //#endregion
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a21940862db149b11d3e917526debd8c79496ec4
 function App() {
   //#region 정리 해야해
   // ver1
@@ -63,12 +52,8 @@ function App() {
   // }
 
   // const [company, setCompany] = useState("더존");
-<<<<<<< HEAD
   const [company, setCompany] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-=======
-  // const [darkMode, setDarkMode] = useState(false);
->>>>>>> a21940862db149b11d3e917526debd8c79496ec4
   // const [bgcolor, setBgcolor] = useState("white");
   // const [ftcolor, setFtcolor] = useState("black");
   //#endregion
@@ -87,7 +72,7 @@ function App() {
       {/* <Parent/> */}
 
       {/* <UseState1 /> */}
-      <UseState2 />
+      {/* <UseState2 /> */}
 
       {/* useEffect1 */}
       {/* <UseEffect1/> */}
@@ -125,7 +110,7 @@ function App() {
       {/* <UseCallback1/> */}
       {/* <UseCallback2/> */}
 
-      <UseReducer1/>
+      {/* <UseReducer1/> */}
       <UseReducer2/>
 
     </div>
