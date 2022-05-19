@@ -1,5 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+//#region 으악 더러워
+import logo from './logo.svg';
 import Hello from './Hello';
 import UseState1 from './UseState1';
 import UseState2 from './UseState2';
@@ -8,12 +10,17 @@ import Parent from './Parent';
 import Child from './Child';
 import UseEffect1 from './UseEffect1';
 import UseEffect2 from './UseEffect2';
-import React, { useState } from 'react';
 import UseRef1 from './UseRef1';
 import UseRef2 from './UseRef2';
 import UseRef3 from './UseRef3';
 import News from './News';
 import { UseContext1 } from "./UseContext1";
+import UseMemo1 from './UseMemo1';
+import UseMemo2 from './UseMemo2';
+import UseCallback1 from './UseCallback1';
+import UseCallback2 from './UseCallback2';
+import UseReducer1 from './UseReducer1';
+import UseReducer2 from './UseReducer2';
 
 // function App() {
 //   const title = "React"
@@ -34,7 +41,9 @@ import { UseContext1 } from "./UseContext1";
 //     <UseState2/>
 //   );
 // }
+//#endregion
 function App() {
+  //#region 정리 해야해
   // ver1
   // const [work, setWork] = useState(false);
 
@@ -44,10 +53,11 @@ function App() {
   //   setState(true);
   // }
 
-  const [company, setCompany] = useState("더존");
-  const [darkMode, setDarkMode] = useState(false);
+  // const [company, setCompany] = useState("더존");
+  // const [darkMode, setDarkMode] = useState(false);
   // const [bgcolor, setBgcolor] = useState("white");
   // const [ftcolor, setFtcolor] = useState("black");
+  //#endregion
   return (
     <div className="App">
       {/* <View>
@@ -59,8 +69,10 @@ function App() {
       {/* <Parent>
         <child></child>
       </Parent> */}
+      {/* <Parent/> */}
+
       {/* <UseState1 /> */}
-      {/* <UseState2 /> */}
+      <UseState2 />
 
       {/* useEffect1 */}
       {/* <UseEffect1/> */}
@@ -87,10 +99,19 @@ function App() {
       {/* useContext */}
       {/* <News company={company} setCompany={setCompany} ></News> */}
 
-      <UseContext1.Provider value={{company, setCompany, darkMode, setDarkMode}}>
+      {/* <UseContext1.Provider value={{company, setCompany, darkMode, setDarkMode}}> */}
       {/* <UseContext1.Provider value={{company, bgcolor, ftcolor, setCompany, setBgcolor, setFtcolor}}> */}
-        <News></News>
-      </UseContext1.Provider>
+        {/* <News></News>
+      </UseContext1.Provider> */}
+
+      {/* <UseMemo1/> */}
+      {/* <UseMemo2/> */}
+
+      {/* <UseCallback1/> */}
+      {/* <UseCallback2/> */}
+
+      <UseReducer1/>
+      <UseReducer2/>
 
     </div>
   );
