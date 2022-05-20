@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import Storage from './Storage';
 //#region 으악 더러워
 import logo from './logo.svg';
 import Hello from './Hello';
@@ -111,7 +112,9 @@ function App() {
       {/* <UseCallback2/> */}
 
       {/* <UseReducer1/> */}
-      <UseReducer2/>
+      {/* <UseReducer2/> */}
+
+      <Storage></Storage>
 
     </div>
   );
