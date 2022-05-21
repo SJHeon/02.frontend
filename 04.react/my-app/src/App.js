@@ -114,7 +114,7 @@ function App() {
       {/* <UseReducer1/> */}
       {/* <UseReducer2/> */}
 
-      <Storage></Storage>
+      <Storage/>
 
     </div>
   );
