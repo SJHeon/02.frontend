@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import Pass from'./jun_Storage';
 import Storage from './Storage';
 //#region 으악 더러워
 import logo from './logo.svg';
@@ -114,7 +115,8 @@ function App() {
       {/* <UseReducer1/> */}
       {/* <UseReducer2/> */}
 
-      <Storage/>
+      {/* <Storage/> */}
+      <Pass/>
 
     </div>
   );
