@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Storage() {
+function Heon_Storage() {
     const [name, setName] = useState("");
     const [equal, setEqual] = useState("");
     const [check, setCheck] = useState(false);
@@ -44,7 +44,7 @@ function Storage() {
         for (var i = 0; i < window.localStorage.length; i++) {
             if (name === JSON.parse(window.localStorage.getItem(`key${i}`)).name) {
                 console.log("정보 있음");
-                setCheck(true);
+                setCheck(true); // for문 밖에서 쓸생ㅇ각 해보자
                 break;
             };
         };
@@ -70,4 +70,4 @@ function Storage() {
     );
 };
 
-export default Storage;
+export default Heon_Storage;

@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
-import Pass from'./jun_Storage';
+import StyledComponent from './StyledComponent';
+import Pass from './jun_Storage';
 import Storage from './Storage';
 //#region 으악 더러워
 import logo from './logo.svg';
@@ -16,9 +17,12 @@ import UseRef1 from './UseRef1';
 import UseRef2 from './UseRef2';
 import UseRef3 from './UseRef3';
 import News from './News';
-import { UseContext1 } from "./UseContext1";
+import { UseContext1 } from './UseContext1';
 import UseReducer1 from './UseReducer1';
 import UseReducer2 from './UseReducer2';
+import Inputs from './Inputs';
+import CSSModule from './CSSModule';
+import Async from './Async';
 //#region view
 // function App() {
 //   const title = "React"
@@ -41,7 +45,6 @@ import UseReducer2 from './UseReducer2';
 // }
 //#endregion
 
-
 function App() {
   //#region 정리 해야해
   // ver1
@@ -61,7 +64,6 @@ function App() {
   //#endregion
   return (
     <div className="App">
-
       {/* <View>
         <Hello name="react" color="red"></Hello>
         <Hello color="yellowgreen" important={true}></Hello>
@@ -92,7 +94,6 @@ function App() {
 
       <button onClick={changeImportant}>work</button> */}
 
-
       {/* useRef */}
       {/* <UseRef1></UseRef1> */}
       {/* <UseRef2/> */}
@@ -103,7 +104,7 @@ function App() {
 
       {/* <UseContext1.Provider value={{company, setCompany, darkMode, setDarkMode}}> */}
       {/* <UseContext1.Provider value={{company, bgcolor, ftcolor, setCompany, setBgcolor, setFtcolor}}> */}
-        {/* <News></News>
+      {/* <News></News>
       </UseContext1.Provider> */}
 
       {/* <UseMemo1/> */}
@@ -116,8 +117,14 @@ function App() {
       {/* <UseReducer2/> */}
 
       {/* <Storage/> */}
-      <Pass/>
+      {/* <Pass/> */}
 
+      <Inputs />
+
+      {/* <CSSModule /> */}
+      {/* <StyledComponent /> */}
+
+      {/* <Async></Async> */}
     </div>
   );
 }
