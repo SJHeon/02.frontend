@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { getUsers } from './api/users';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { getUsers } from "./api/users";
 
 function Async() {
   // photos : state
@@ -25,16 +25,16 @@ function Async() {
   //   };
 
   const getData = () => {
-    let url = 'https://jsonplaceholder.typicode.com/photos';
+    let url = "https://jsonplaceholder.typicode.com/photos";
     axios
       .get(url)
       .then((response) => {
         console.log(response.data);
-        console.log('정상 응답');
+        console.log("정상 응답");
         setPhotos(response.data);
       })
       .catch((error) => {
-        console.log('비정상 응답', error);
+        console.log("비정상 응답", error);
       });
   };
 
@@ -71,7 +71,7 @@ function Async() {
             {photo.thumbnailUrl}
           </div>
         ) : (
-          ''
+          ""
         );
       })}
     </div>

@@ -1,28 +1,28 @@
-import './App.css';
-import React, { useState } from 'react';
-import StyledComponent from './StyledComponent';
-import Pass from './jun_Storage';
-import Storage from './Storage';
+import "./App.css";
+import React, { useState } from "react";
+import StyledComponent from "./StyledComponent";
+import Pass from "./jun_Storage";
+import Storage from "./Storage";
 //#region 으악 더러워
-import logo from './logo.svg';
-import Hello from './Hello';
-import UseState1 from './UseState1';
-import UseState2 from './UseState2';
-import View from './View';
-import Parent from './Parent';
-import Child from './Child';
-import UseEffect1 from './UseEffect1';
-import UseEffect2 from './UseEffect2';
-import UseRef1 from './UseRef1';
-import UseRef2 from './UseRef2';
-import UseRef3 from './UseRef3';
-import News from './News';
-import { UseContext1 } from './UseContext1';
-import UseReducer1 from './UseReducer1';
-import UseReducer2 from './UseReducer2';
-import Inputs from './Inputs';
-import CSSModule from './CSSModule';
-import Async from './Async';
+import logo from "./logo.svg";
+import Hello from "./Hello";
+import UseState1 from "./UseState1";
+import UseState2 from "./UseState2";
+import View from "./View";
+import Parent from "./Parent";
+import Child from "./Child";
+import UseEffect1 from "./UseEffect1";
+import UseEffect2 from "./UseEffect2";
+import UseRef1 from "./UseRef1";
+import UseRef2 from "./UseRef2";
+import UseRef3 from "./UseRef3";
+import News from "./News";
+import { UseContext1 } from "./UseContext1";
+import UseReducer1 from "./UseReducer1";
+import UseReducer2 from "./UseReducer2";
+import Inputs from "./Inputs";
+import CSSModule from "./CSSModule";
+import Async from "./Async";
 //#region view
 // function App() {
 //   const title = "React"
@@ -119,12 +119,12 @@ function App() {
       {/* <Storage/> */}
       {/* <Pass/> */}
 
-      <Inputs />
+      {/* <Inputs /> */}
 
       {/* <CSSModule /> */}
       {/* <StyledComponent /> */}
 
-      {/* <Async></Async> */}
+      <Async></Async>
     </div>
   );
 }
