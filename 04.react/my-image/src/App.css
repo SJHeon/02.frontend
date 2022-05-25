@@ -1,0 +1,66 @@
+.container {
+  width: 100vw;
+  /* view -> 100vw 보는 화면 전체 */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-button {
+  width: 50px;
+  height: 50px;
+  border: 2px solid palevioletred;
+  background-color: palevioletred;
+  color: white;
+  font-size: 24px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 24px;
+}
+
+.file-upload-input {
+  display: none;
+}
+
+.main-text {
+  text-align: center;
+}
+
+.gallery {
+  /* display: flex; */
+  height: 600px;
+  /* width: 150px; */
+  border: 2px dashed red;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.img-item {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  /* border: 2px dashed red; */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.img-item img {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  max-width: 150px;
+}
