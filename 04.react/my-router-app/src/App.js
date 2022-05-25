@@ -1,11 +1,11 @@
-import './App.css';
-import React from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
-import Home from './Home';
-import Project from './Project';
-import Projects from './Projects';
-import Footer from './pages/Footer';
-import Header from './pages/Header';
+import "./App.css";
+import React from "react";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import Home from "./Home";
+import Project from "./Project";
+import Projects from "./Projects";
+import Footer from "./pages/Footer";
+import Header from "./pages/Header";
 //#region 원래코드
 // function App({ children }) {
 // function App() {
@@ -42,7 +42,7 @@ import Header from './pages/Header';
 
 function App() {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Header />
       <hr />
       <div>

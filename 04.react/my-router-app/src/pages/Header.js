@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 function Header() {
   return (
-    <div>
+    <div className="header">
       <h1> Post </h1>
       <button>button</button>
     </div>
