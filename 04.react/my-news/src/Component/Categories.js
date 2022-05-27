@@ -1,36 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import getCategoryData from "../api/getCategoryData";
 
-const categories = [
-  {
-    name: 'all',
-    text: '전체보기',
-  },
-  {
-    name: 'business',
-    text: '비즈니스',
-  },
-  {
-    name: 'entertainment',
-    text: '엔터테인먼트',
-  },
-  {
-    name: 'health',
-    text: '건강',
-  },
-  {
-    name: 'science',
-    text: '과학',
-  },
-  {
-    name: 'sports',
-    text: '스포츠',
-  },
-  {
-    name: 'technology',
-    text: '기술',
-  },
-];
+// const categories = [
+//   {
+//     name: 'all',
+//     text: '전체보기',
+//   },
+//   {
+//     name: 'business',
+//     text: '비즈니스',
+//   },
+//   {
+//     name: 'entertainment',
+//     text: '엔터테인먼트',
+//   },
+//   {
+//     name: 'health',
+//     text: '건강',
+//   },
+//   {
+//     name: 'science',
+//     text: '과학',
+//   },
+//   {
+//     name: 'sports',
+//     text: '스포츠',
+//   },
+//   {
+//     name: 'technology',
+//     text: '기술',
+//   },
+// ];
 
 const CategoriesBlock = styled.div`
   display: flex;
@@ -60,6 +61,15 @@ const Category = styled.div`
 `;
 
 function Categories({ category, setCategory }) {
+  const [categories, setCategories] = useState([]);
+  const getCategory = async () => {
+    const data = await getCategoryData();
+    setCategories(data);
+  };
+  useEffect(() => {
+    getCategory();
+  }, []);
+  console.log(categories);
   return (
     <CategoriesBlock>
       {categories.map((c) => (

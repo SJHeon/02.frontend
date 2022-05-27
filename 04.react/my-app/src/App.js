@@ -1,28 +1,31 @@
 import "./App.css";
-import React, { useState } from "react";
-import StyledComponent from "./StyledComponent";
-import Pass from "./jun_Storage";
-import Storage from "./Storage";
+import React from "react";
+import HeonReducer from "./\bHeonReducer";
+// import React, { useState } from "react";
 //#region 으악 더러워
-import logo from "./logo.svg";
-import Hello from "./Hello";
-import UseState1 from "./UseState1";
-import UseState2 from "./UseState2";
-import View from "./View";
-import Parent from "./Parent";
-import Child from "./Child";
-import UseEffect1 from "./UseEffect1";
-import UseEffect2 from "./UseEffect2";
-import UseRef1 from "./UseRef1";
-import UseRef2 from "./UseRef2";
-import UseRef3 from "./UseRef3";
-import News from "./News";
-import { UseContext1 } from "./UseContext1";
-import UseReducer1 from "./UseReducer1";
-import UseReducer2 from "./UseReducer2";
-import Inputs from "./Inputs";
-import CSSModule from "./CSSModule";
-import Async from "./Async";
+// import StyledComponent from "./StyledComponent";
+import Pass from "./jun_Storage";
+// import Storage from "./Storage";
+// import logo from "./logo.svg";
+// import Hello from "./Hello";
+// import UseState1 from "./UseState1";
+// import UseState2 from "./UseState2";
+// import View from "./View";
+// import Parent from "./Parent";
+// import Child from "./Child";
+// import UseEffect1 from "./UseEffect1";
+// import UseEffect2 from "./UseEffect2";
+// import UseRef1 from "./UseRef1";
+// import UseRef2 from "./UseRef2";
+// import UseRef3 from "./UseRef3";
+// import News from "./News";
+// import { UseContext1 } from "./UseContext1";
+// import UseReducer1 from "./UseReducer1";
+// import UseReducer2 from "./UseReducer2";
+// import Inputs from "./Inputs";
+// import CSSModule from "./CSSModule";
+// import Async from "./Async";
+//#endregion
 //#region view
 // function App() {
 //   const title = "React"
@@ -57,8 +60,8 @@ function App() {
   // }
 
   // const [company, setCompany] = useState("더존");
-  const [company, setCompany] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  // const [company, setCompany] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   // const [bgcolor, setBgcolor] = useState("white");
   // const [ftcolor, setFtcolor] = useState("black");
   //#endregion
@@ -97,7 +100,7 @@ function App() {
       {/* useRef */}
       {/* <UseRef1></UseRef1> */}
       {/* <UseRef2/> */}
-      {/* <UseRef3/> */}
+      {/* <UseRef3 /> */}
 
       {/* useContext */}
       {/* <News company={company} setCompany={setCompany} ></News> */}
@@ -114,17 +117,18 @@ function App() {
       {/* <UseCallback2/> */}
 
       {/* <UseReducer1/> */}
-      {/* <UseReducer2/> */}
+      {/* <UseReducer2 /> */}
 
       {/* <Storage/> */}
-      {/* <Pass/> */}
+      <Pass />
 
       {/* <Inputs /> */}
 
       {/* <CSSModule /> */}
       {/* <StyledComponent /> */}
 
-      <Async></Async>
+      {/* <Async></Async> */}
+      {/* <HeonReducer></HeonReducer> */}
     </div>
   );
 }

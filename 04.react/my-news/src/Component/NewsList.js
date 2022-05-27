@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import axios from 'axios';
-import NewsItem from './NewsItem';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import axios from "axios";
+import NewsItem from "./NewsItem";
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -23,18 +23,24 @@ const NewsListBlock = styled.div`
 //   urlToImage: 'https://via.placeholder.com/160',
 // };
 
-function NewsList({ category }) {
+function NewsList({ category, categoryValue }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
+        // const queryString =
+        //   category === "all" || category === "" ? "" : `& category=${category}`;
         const queryString =
-          category === 'all' || category === '' ? '' : `&category=${category}`;
+          category === ""
+            ? `&category=${categoryValue}`
+            : category === "all"
+            ? ""
+            : `&category=${category}`;
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=kr&apiKey=bc51f2b5411d4cee80544a3261024959${queryString}`
+          `https://newsapi.org/v2/top-headlines?country=kr&apiKey=64f7ff5d583a4c1db4d2158d4d60fa68${queryString}`
         );
-        console.log(response.data);
+
         setArticles(response.data.articles);
       } catch (error) {
         console.log(error);

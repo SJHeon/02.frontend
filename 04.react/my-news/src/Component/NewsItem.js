@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const NewsItemBlock = styled.div`
   display: flex;
@@ -40,14 +40,12 @@ function NewsItem({ article }) {
   const { title, description, url, urlToImage } = article;
   return (
     <NewsItemBlock>
-      (
-      <div className={'thumbnail'}>
+      <div className={"thumbnail"}>
         <a href={url} target="_blank">
-          <img src={urlToImage} alt={'thumbnail'}></img>
+          <img src={urlToImage} alt={"thumbnail"}></img>
         </a>
       </div>
-      )
-      <div className={'contents'}>
+      <div className={"contents"}>
         <h2>
           <a href={url} target="_blank">
             {title}
