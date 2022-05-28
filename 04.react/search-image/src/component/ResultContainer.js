@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import getImages from '../api/getImages';
-import DummyData from '../asset/dummyData';
-import ImageCard from './ImageCard';
-import NotFoundResult from './NotFoundResult';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import getImages from "../api/getImages";
+import DummyData from "../asset/dummyData";
+import ImageCard from "./ImageCard";
+import NotFoundResult from "./NotFoundResult";
 
 const Container = styled.div`
   max-width: 1600px;
@@ -19,16 +19,17 @@ const ResultsWrapper = styled.div`
   width: 100%;
 `;
 
-const ResultContainer = () => {
+const ResultContainer = ({ inputValue }) => {
   //   const data = DummyData;
   const [data, setData] = useState({});
+  // console.log(inputValue);
   useEffect(() => {
     const fetch = async () => {
-      const data = await getImages();
+      const data = await getImages(inputValue);
       setData(data);
     };
     fetch();
-  }, []);
+  }, [inputValue]);
 
   return (
     <Container>
