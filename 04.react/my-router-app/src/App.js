@@ -8,50 +8,50 @@ import Footer from "./pages/Footer";
 import Header from "./pages/Header";
 //#region 원래코드
 // function App({ children }) {
-// function App() {
-//   function activeStyle({ isActive }) {
-//     return {
-//       textDecoration: isActive ? 'underline' : undefined,
-//       fontSize: isActive ? '24px' : undefined,
-//     };
-//   }
-//   return (
-//     <div>
-//       <ul>
-//         <li>
-//           <Link to="/">Home</Link>
-//         </li>
-//         <li>
-//           <NavLink to="/" style={activeStyle}>
-//             Home
-//           </NavLink>
-//         </li>
-//         <li>
-//           <Link to="/Projects">Projects</Link>
-//         </li>
-//       </ul>
-//       <hr />
-//       {/* <div>{children}</div> */}
-//       <div>
-//         <Outlet></Outlet>
-//       </div>
-//     </div>
-//   );
-// }
-//#endregion
-
 function App() {
+  function activeStyle({ isActive }) {
+    return {
+      textDecoration: isActive ? "underline" : undefined,
+      fontSize: isActive ? "24px" : undefined,
+    };
+  }
   return (
-    <div style={{ textAlign: "center" }}>
-      <Header />
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <NavLink to="/" style={activeStyle}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <Link to="/Projects">Projects</Link>
+        </li>
+      </ul>
       <hr />
+      {/* <div>{children}</div> */}
       <div>
         <Outlet></Outlet>
       </div>
-      <hr />
-      <Footer />
     </div>
   );
 }
+//#endregion
+
+// function App() {
+//   return (
+//     <div style={{ textAlign: "center" }}>
+//       <Header />
+//       <hr />
+//       <div>
+//         <Outlet></Outlet>
+//       </div>
+//       <hr />
+//       <Footer />
+//     </div>
+//   );
+// }
 
 export default App;

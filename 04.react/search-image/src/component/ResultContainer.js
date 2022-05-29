@@ -31,11 +31,23 @@ const ResultContainer = ({ inputValue }) => {
     fetch();
   }, [inputValue]);
 
+  const viewImg = (e) => {
+    console.log(e.target.currentSrc);
+    console.log(e);
+    return <img src={e.target.currentSrc}></img>;
+  };
+
   return (
     <Container>
       <ResultsWrapper>
         {data.hits?.map((imgData) => (
-          <ImageCard key={imgData.id} imgData={imgData} />
+          <ImageCard
+            key={imgData.id}
+            imgData={imgData}
+            onClick={() => {
+              // setImage(!image);
+            }}
+          />
         ))}
         <NotFoundResult />
       </ResultsWrapper>

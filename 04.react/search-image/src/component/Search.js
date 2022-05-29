@@ -38,6 +38,10 @@ const SearchInput = styled.input`
   flex: auto;
   margin-left: 8px;
 `;
+
+const RecentSearch = styled.h4`
+  margin: 8px 0px;
+`;
 // let preValue = [];
 const Search = ({ setInputValue }) => {
   const [preValue, setPreValue] = useState([]);
@@ -58,8 +62,13 @@ const Search = ({ setInputValue }) => {
           <SearchInput placeholder="검색 후 ENTER" onKeyDown={enterKey} />
         </SearchInputContainer>
       </SearchBoxContainer>
+      <RecentSearch>최근 검색어</RecentSearch>
       <SearchTagContainer>
-        <SearchTag preValueBox={preValue} setValueBox={setPreValue} />
+        <SearchTag
+          preValueBox={preValue}
+          setValueBox={setPreValue}
+          setInputValue={setInputValue}
+        />
       </SearchTagContainer>
     </>
   );

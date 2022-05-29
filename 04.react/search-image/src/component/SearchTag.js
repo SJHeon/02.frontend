@@ -23,19 +23,29 @@ const TagLabel = styled.span`
   }
 `;
 
-const SearchTag = ({ preValueBox, setValueBox }) => {
+const SearchTag = ({ preValueBox, setValueBox, setInputValue }) => {
   //   console.log(preValueBox);
   //   console.log(typeof preValueBox);
   const resetPreValue = () => {
     setValueBox([]);
   };
+  const getValue = (e) => {
+    console.log(e.target.innerText);
+    setInputValue(e.target.innerText);
+  };
   return (
-    <Tag>
-      {preValueBox.map((preValue, idx) => {
-        return <TagLabel key={idx}>{preValue}</TagLabel>;
-      })}
-      <DeleteIcon onClick={resetPreValue} width="12px" />
-    </Tag>
+    <>
+      <Tag>
+        {preValueBox.map((preValue, idx) => {
+          return (
+            <TagLabel key={idx} onClick={getValue}>
+              {preValue}
+            </TagLabel>
+          );
+        })}
+        <DeleteIcon onClick={resetPreValue} width="12px" />
+      </Tag>
+    </>
   );
 };
 

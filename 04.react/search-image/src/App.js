@@ -12,8 +12,8 @@ const Container = styled.div`
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  console.log(inputValue);
-  console.log(typeof inputValue);
+  //   console.log(inputValue);
+  //   console.log(typeof inputValue);
   return (
     <>
       <Container>
