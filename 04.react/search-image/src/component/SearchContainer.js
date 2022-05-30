@@ -35,8 +35,24 @@ const Content = styled.div`
   text-align: center;
   padding: 120px 32px 16px 32px;
 `;
+//#region 내코드
+// const SearchContainer = ({ setInputValue }) => {
+//   return (
+//     <Container>
+//       <Content>
+//         <SearchTitle>
+//           <SearchTitleLink href="./">사진 검색</SearchTitleLink>
+//         </SearchTitle>
+//         <SearchSubtitle>What's your images?</SearchSubtitle>
 
-const SearchContainer = ({ setInputValue }) => {
+//         <Search setInputValue={setInputValue} />
+//       </Content>
+//     </Container>
+//   );
+// };
+//#endregion
+
+const SearchContainer = ({ setQuery }) => {
   return (
     <Container>
       <Content>
@@ -45,7 +61,7 @@ const SearchContainer = ({ setInputValue }) => {
         </SearchTitle>
         <SearchSubtitle>What's your images?</SearchSubtitle>
 
-        <Search setInputValue={setInputValue} />
+        <Search setQuery={setQuery} />
       </Content>
     </Container>
   );

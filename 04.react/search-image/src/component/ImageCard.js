@@ -20,7 +20,7 @@ const ViewImg = styled.img``;
 const ImageCard = ({ imgData, onClick }) => {
   const [image, setImage] = useState(false);
 
-  console.log(imgData);
+  // console.log(imgData);
   const { webformatURL, id } = imgData;
   return (
     <Card onClick={onClick}>

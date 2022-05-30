@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as SearchIcon } from "../asset/search.svg";
 import ResultContainer from "./ResultContainer";
@@ -42,33 +42,67 @@ const SearchInput = styled.input`
 const RecentSearch = styled.h4`
   margin: 8px 0px;
 `;
+//#region 내코드
 // let preValue = [];
-const Search = ({ setInputValue }) => {
-  const [preValue, setPreValue] = useState([]);
-  const enterKey = (e) => {
-    if (e.keyCode === 13) {
-      // console.log(e.target.value);
-      setInputValue(e.target.value);
-      // preValue = [...preValue, e.target.value];
-      setPreValue([...preValue, e.target.value]);
-      console.log(preValue);
+// const Search = ({ setInputValue }) => {
+//   const [preValue, setPreValue] = useState([]);
+//   const enterKey = (e) => {
+//     if (e.keyCode === 13) {
+//       // console.log(e.target.value);
+//       setInputValue(e.target.value);
+//       // preValue = [...preValue, e.target.value];
+//       setPreValue([...preValue, e.target.value]);
+//       console.log(preValue);
+//     }
+//   };
+//   return (
+//     <>
+//       <SearchBoxContainer>
+//         <SearchInputContainer>
+//           <SearchIcon width="24" fill="#5e5e5e" />
+//           <SearchInput placeholder="검색 후 ENTER" onKeyDown={enterKey} />
+//         </SearchInputContainer>
+//       </SearchBoxContainer>
+//       <RecentSearch>최근 검색어</RecentSearch>
+//       <SearchTagContainer>
+//         <SearchTag
+//           preValueBox={preValue}
+//           setValueBox={setPreValue}
+//           setInputValue={setInputValue}
+//         />
+//       </SearchTagContainer>
+//     </>
+//   );
+// };
+//#endregion
+
+const Search = ({ setQuery }) => {
+  const inputRef = useRef(null);
+
+  const onSearch = (event) => {
+    if (event.key === "Enter") {
+      // console.log(event.target.value);
+      const currentValue = event.target.value;
+      setQuery(currentValue);
+      inputRef.current.value = "";
     }
   };
+
   return (
     <>
       <SearchBoxContainer>
         <SearchInputContainer>
           <SearchIcon width="24" fill="#5e5e5e" />
-          <SearchInput placeholder="검색 후 ENTER" onKeyDown={enterKey} />
+          <SearchInput
+            placeholder="검색 후 ENTER"
+            ref={inputRef}
+            onKeyDown={onSearch}
+          />
         </SearchInputContainer>
       </SearchBoxContainer>
       <RecentSearch>최근 검색어</RecentSearch>
       <SearchTagContainer>
-        <SearchTag
-          preValueBox={preValue}
-          setValueBox={setPreValue}
-          setInputValue={setInputValue}
-        />
+        <SearchTag />
       </SearchTagContainer>
     </>
   );
